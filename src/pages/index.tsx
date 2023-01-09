@@ -1,14 +1,16 @@
 import { css } from "@emotion/react";
 import type { NextPage } from "next";
 import { useCallback, useState } from "react";
+import { TestButton } from "~/components/TestButton";
 
 const Home: NextPage = (): JSX.Element => {
   const [count, setCount] = useState(0);
 
+  // こコンポーネントでもやってみよう
   // こいつは一度し生成されないので初期値のを参照している
   const TestHandler = useCallback(() => {
     console.log("test", count);
-  }, []);
+  }, [count]);
 
   console.log("soto", count);
 
@@ -25,9 +27,12 @@ const Home: NextPage = (): JSX.Element => {
       <button css={button} onClick={clickHandler}>
         test
       </button>
+
       <button css={buttonTest} onClick={TestHandler}>
         testHan
       </button>
+
+      <TestButton count={count} />
     </>
   );
 };
