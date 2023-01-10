@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import type { NextPage } from "next";
 import { useCallback, useState } from "react";
 import { TestButton } from "~/components/TestButton";
+import { UseMemo } from "~/components/UseMemo";
 
 const Home: NextPage = (): JSX.Element => {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ const Home: NextPage = (): JSX.Element => {
       </button>
 
       <TestButton count={count} />
+      <UseMemo />
     </>
   );
 };
